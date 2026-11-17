@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>B2B-каталог - концепт</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef0f2;--card:#fff;--ink:#16202b;--mut:#5b6672;--line:#d5dade;--acc:#d2541b;--acc2:#1f5f8b;--ok:#2f7d4f;--grid:#16202b0d}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"IBM Plex Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:14px;overflow-x:hidden}
+.mono{font-family:"IBM Plex Mono",monospace}
+header{background:var(--ink);color:#fff;position:sticky;top:0;z-index:30}
+.hb{max-width:1240px;margin:auto;display:flex;align-items:center;gap:16px;padding:10px 16px;flex-wrap:wrap}
+.logo{font-weight:700;letter-spacing:.04em;display:flex;align-items:center;gap:10px}
+.logo svg{width:30px}
+.srch{flex:1;min-width:200px;display:flex;background:#ffffff14;border-radius:8px;overflow:hidden}
+.srch input{flex:1;background:none;border:0;color:#fff;padding:9px 12px;font:inherit}
+.srch input::placeholder{color:#ffffff99}
+.role{display:flex;background:#ffffff14;border-radius:8px;padding:3px}
+.role button{border:0;background:none;color:#fff;font:600 12px "IBM Plex Sans";padding:6px 10px;border-radius:6px;cursor:pointer}
+.role button.on{background:var(--acc)}
+.cartb{background:#fff;color:var(--ink);border:0;border-radius:8px;padding:8px 12px;font-weight:600;cursor:pointer}
+.cartb b{background:var(--acc);color:#fff;border-radius:10px;padding:0 6px;margin-left:4px}
+.hero{background:var(--ink);color:#fff;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,#ffffff0d 1px,transparent 1px);background-size:24px 24px}
+.hi{max-width:1240px;margin:auto;padding:36px 16px 40px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center}
+.hi h1{font-size:clamp(26px,3.4vw,40px);line-height:1.1;font-weight:700}
+.hi h1 span{color:#f08a4b}
+.hi p{color:#c7cfd6;margin:14px 0 20px;max-width:34em;line-height:1.5}
+.hbtn{display:flex;gap:10px;flex-wrap:wrap}
+.btn{border:0;border-radius:8px;padding:11px 16px;font:600 14px "IBM Plex Sans";cursor:pointer}
+.b1{background:var(--acc);color:#fff}.b2{background:#ffffff1a;color:#fff}.b3{background:var(--ink);color:#fff}
+.stats{display:flex;gap:22px;margin-top:22px;flex-wrap:wrap}
+.stats div{font-size:12px;color:#c7cfd6}.stats b{display:block;font:600 22px "IBM Plex Mono";color:#fff}
+.draw{width:100%;max-width:420px;justify-self:center}
+.draw path,.draw circle,.draw line{stroke:#f08a4b;fill:none;stroke-width:1.5}
+.draw .dim{stroke:#ffffff80;stroke-width:1;stroke-dasharray:4 3}
+.draw text{fill:#c7cfd6;font:11px "IBM Plex Mono"}
+.draw .anim{stroke-dasharray:900;stroke-dashoffset:900;animation:dr 2.4s .3s cubic-bezier(.4,.1,.2,1) forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+main{max-width:1240px;margin:auto;padding:18px 16px 60px;display:grid;grid-template-columns:250px 1fr;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px}
+.flt{padding:14px;align-self:start;position:sticky;top:70px}
+.flt h4{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin:14px 0 8px}
+.flt h4:first-child{margin-top:0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{border:1px solid var(--line);background:#fff;border-radius:6px;padding:5px 9px;font:500 12px "IBM Plex Sans";cursor:pointer}
+.pill.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.seo{margin-top:14px;padding:10px;background:#f6f7f8;border-radius:8px;font-size:11px;color:var(--mut);word-break:break-all}
+.seo b{color:var(--acc2)}
+.top2{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:10px;flex-wrap:wrap}
+.top2 h2{font-size:20px}
+.crumbs{font-size:12px;color:var(--mut)}
+.note{font-size:12px;padding:8px 12px;border-radius:8px;background:#fff4ec;color:#7a3a12;border:1px solid #f3d3bd;margin-bottom:10px}
+table{width:100%;border-collapse:collapse}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);text-align:left;padding:10px;border-bottom:1px solid var(--line);font-weight:600}
+td{padding:10px;border-bottom:1px solid #eef0f2;vertical-align:middle}
+tr:hover td{background:#fafbfc}
+.nm b{display:block;font-weight:600}.nm small{color:var(--mut)}
+.stk{font-size:12px;font-weight:600}
+.stk.y{color:var(--ok)}.stk.n{color:var(--mut)}
+.pr{font:600 14px "IBM Plex Mono";white-space:nowrap}
+.pr.h{color:var(--mut);font:500 12px "IBM Plex Sans"}
+.add{border:1px solid var(--ink);background:#fff;border-radius:6px;padding:6px 10px;font-weight:600;cursor:pointer}
+.add.in{background:var(--ok);border-color:var(--ok);color:#fff}
+.tw{overflow-x:auto}
+.foot{display:flex;justify-content:space-between;align-items:center;padding:10px;color:var(--mut);font-size:12px}
+/* drawer */
+.dr{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:#fff;z-index:50;transform:translateX(100%);transition:transform .45s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;box-shadow:-20px 0 60px #0003}
+.dr.on{transform:none}
+.dh{padding:16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.dh button{border:0;background:none;font-size:22px;cursor:pointer}
+.db{padding:16px;overflow:auto;flex:1}
+.ln{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #eef0f2;font-size:13px}
+.fld{margin-top:14px}
+.fld label{font-size:12px;color:var(--mut);display:block;margin-bottom:4px}
+.fld input{width:100%;border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit}
+.dd{margin-top:8px;padding:10px;border-radius:8px;background:#eef6f1;border:1px solid #cfe5d7;font-size:12px;line-height:1.5;display:none}
+.dd.on{display:block;animation:fi .3s}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}}
+.chk{display:flex;gap:8px;font-size:12px;color:var(--mut);margin-top:12px;align-items:flex-start}
+.ok{display:none;text-align:center;padding:30px 10px}
+.ok.on{display:block;animation:fi .4s}
+.ok b{font:600 18px "IBM Plex Mono";color:var(--ok)}
+.sh{position:fixed;inset:0;background:#16202b80;z-index:40;display:none}.sh.on{display:block}
+.legend{max-width:1240px;margin:-40px auto 40px;padding:0 16px;font-size:12px;color:var(--mut)}
+@media (max-width:860px){.hi{grid-template-columns:1fr}.draw{max-width:300px}main{grid-template-columns:1fr}.flt{position:static}.hide-m{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.draw .anim{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<header><div class="hb">
+  <div class="logo"><svg viewBox="0 0 30 30"><rect width="30" height="30" rx="6" fill="#d2541b"/><path d="M7 21V12a5 5 0 0 1 5-5h11" stroke="#fff" stroke-width="3" fill="none"/></svg>ТРУБОДЕТАЛЬ<span style="opacity:.5;font-weight:400">· концепт</span></div>
+  <div class="srch"><input id="q" placeholder="Поиск: отвод 219, 09Г2С, ГОСТ 17375…"></div>
+  <div class="role" id="role"><button data-r="g" class="on">Гость</button><button data-r="c">Контрагент</button><button data-r="d">Дилер</button></div>
+  <button class="cartb" id="cb">Заявка <b id="cn">0</b></button>
+</div></header>
+
+<section class="hero"><div class="hi">
+  <div>
+    <h1>Детали трубопроводов <span>от завода</span> - счёт по ИНН за 10 минут</h1>
+    <p>Отводы, тройники, переходы и заглушки по ГОСТ 17375-17379. Подбор по DN, толщине стенки и марке стали, остатки склада из 1С, цены по вашему статусу.</p>
+    <div class="hbtn"><button class="btn b1" id="go">Подобрать в каталоге</button><button class="btn b2">Загрузить заявку (Excel/PDF)</button></div>
+    <div class="stats"><div><b>20 000</b>позиций</div><div><b>DN 15-1420</b>диапазон</div><div><b>&lt;200 мс</b>ответ API</div></div>
+  </div>
+  <svg class="draw" viewBox="0 0 360 260" aria-hidden="true">
+    <path class="anim" d="M40 220 V120 A80 80 0 0 1 120 40 H300"/>
+    <path class="anim" d="M80 220 V120 A40 40 0 0 1 120 80 H300" style="animation-delay:.6s"/>
+    <line class="dim" x1="40" y1="236" x2="80" y2="236"/><text x="44" y="252">DN 219</text>
+    <line class="dim" x1="316" y1="40" x2="316" y2="80"/><text x="290" y="64" transform="rotate(-90 322 60)">s 8</text>
+    <circle class="dim" cx="120" cy="120" r="3"/><text x="128" y="132">R 1.5DN · 90°</text>
+    <text x="196" y="160">ГОСТ 17375-2001</text><text x="196" y="178">ст. 09Г2С</text>
+  </svg>
+</div></section>
+
+<main id="cat">
+  <aside class="card flt">
+    <h4>Тип изделия</h4><div class="pills" data-f="type"></div>
+    <h4>Сталь</h4><div class="pills" data-f="st"></div>
+    <h4>DN, мм</h4><div class="pills" data-f="dn"></div>
+    <div class="seo">SEO-страница фильтра:<br><b id="url">/catalog/</b><br><span id="h1"></span></div>
+  </aside>
+  <section>
+    <div class="top2"><div><div class="crumbs" id="cr">Каталог</div><h2 id="ttl">Все изделия</h2></div><span class="crumbs" id="cnt"></span></div>
+    <div class="note" id="note">Вы смотрите как гость: цены и точные остатки видны после входа контрагента. Счёт по ИНН можно запросить без регистрации.</div>
+    <div class="card tw"><table><thead><tr><th>Изделие</th><th class="hide-m">ГОСТ</th><th>Наличие</th><th>Цена с НДС</th><th></th></tr></thead><tbody id="tb"></tbody></table>
+    <div class="foot"><span>Остатки и цены - из 1С:УПП, обновление каждые 15 мин</span><span class="mono">API · 142 мс</span></div></div>
+  </section>
+</main>
+<p class="legend">Концепт для обсуждения: данные и цены условные, интерфейс показывает логику ролей, фильтров, SEO-адресов и счёта по ИНН.</p>
+
+<div class="sh" id="sh"></div>
+<aside class="dr" id="dr">
+  <div class="dh"><b>Заявка на счёт</b><button id="x" aria-label="Закрыть">×</button></div>
+  <div class="db">
+    <div id="form">
+      <div id="lines"></div>
+      <div class="fld"><label>ИНН (10 или 12 цифр)</label><input id="inn" inputmode="numeric" maxlength="12" placeholder="Например, 7707083893"></div>
+      <div class="dd" id="dd"></div>
+      <div class="fld"><label>Телефон</label><input placeholder="+7"></div>
+      <div class="fld"><label>Email</label><input placeholder="snab@company.ru"></div>
+      <div class="chk"><input type="checkbox" id="pd"><label for="pd">Согласие на обработку персональных данных (152-ФЗ) - отдельной галочкой, не предзаполнено</label></div>
+      <button class="btn b3" style="width:100%;margin-top:14px" id="send">Запросить счёт</button>
+    </div>
+    <div class="ok" id="ok"><b>Заявка № 25-0417</b><p style="margin-top:10px;color:var(--mut)">Создан «Заказ покупателя» в 1С, менеджер получил уведомление в Telegram и на почту. Счёт PDF придёт на email.</p></div>
+  </div>
+</aside>
+
+<script>
+const T={otv:'Отвод',tr:'Тройник',per:'Переход',zag:'Заглушка'},TS={otv:'otvody',tr:'troyniki',per:'perehody',zag:'zaglushki'},G={otv:'17375',tr:'17376',per:'17378',zag:'17379'};
+const TP={otv:'Отводы',tr:'Тройники',per:'Переходы',zag:'Заглушки'};
+const ST={'20':'ст. 20','09g2s':'ст. 09Г2С','12x18':'12Х18Н10Т'},DN=[57,89,108,159,219,325];
+let items=[],id=0;
+for(const t in T)for(const s in ST)for(const d of DN){const w=d<100?4:d<200?6:8;const base={otv:1.0,tr:1.6,per:0.9,zag:0.5}[t]*(s==='12x18'?4.2:s==='09g2s'?1.25:1)*d*d/60;items.push({id:id++,t,s,d,w,p:Math.round(base/10)*10+120,q:(d*7+id*13)%9===0?0:((d+id*31)%180)+4})}
+const F={type:null,st:null,dn:null};let role='g',cart={};
+function pills(f,obj){const el=document.querySelector(`[data-f=${f}]`);el.innerHTML='';for(const k of Object.keys(obj)){const b=document.createElement('button');b.className='pill';b.textContent=obj[k];b.onclick=()=>{F[f]=F[f]===k?null:k;render()};b.dataset.k=k;el.appendChild(b)}}
+pills('type',T);pills('st',ST);pills('dn',Object.fromEntries(DN.map(d=>[d,d])));
+function money(n){return n.toLocaleString('ru')+' ₽'}
+function price(i){if(role==='g')return '<span class="pr h">после входа</span>';const p=role==='d'?Math.round(i.p*.88):i.p;return `<span class="pr">${money(p)}</span>${role==='d'?'<br><small style="color:var(--ok)">−12% дилер</small>':''}`}
+function stock(i){if(!i.q)return '<span class="stk n">под заказ, 5-7 дн</span>';if(role==='g')return '<span class="stk y">в наличии</span>';return `<span class="stk y">${i.q} шт · Челябинск</span>`}
+function render(){
+ document.querySelectorAll('.pill').forEach(b=>{const f=b.parentNode.dataset.f;b.classList.toggle('on',String(F[f])===b.dataset.k)});
+ const q=document.getElementById('q').value.toLowerCase();
+ const L=items.filter(i=>(!F.type||i.t===F.type)&&(!F.st||i.s===F.st)&&(!F.dn||i.d==F.dn)&&(!q||(`${T[i.t]} ${i.d} ${ST[i.s]} ${G[i.t]}`).toLowerCase().includes(q)));
+ document.getElementById('tb').innerHTML=L.slice(0,14).map(i=>`<tr><td class="nm"><b>${T[i.t]} ${i.t==='per'?'К':'90°'} ${i.d}×${i.w}</b><small>${ST[i.s]}</small></td><td class="hide-m mono">ГОСТ ${G[i.t]}</td><td>${stock(i)}</td><td>${price(i)}</td><td><button class="add ${cart[i.id]?'in':''}" data-i="${i.id}">${cart[i.id]?'✓ '+cart[i.id]:'+ В заявку'}</button></td></tr>`).join('');
+ document.getElementById('cnt').textContent=`Найдено: ${L.length} (показаны первые 14)`;
+ const parts=['/catalog',F.type?TS[F.type]:null,F.st?'st-'+F.st:null,F.dn?'dn-'+F.dn:null].filter(Boolean);
+ document.getElementById('url').textContent=parts.join('/')+'/';
+ const h=(F.type?TP[F.type]:'Детали трубопроводов')+(F.st?' из '+ST[F.st]:'')+(F.dn?' DN '+F.dn:'');
+ document.getElementById('h1').textContent='H1: '+h+' - купить от завода';document.getElementById('ttl').textContent=h;
+ document.getElementById('cr').textContent='Каталог'+(F.type?' / '+TP[F.type]:'');
+ document.querySelectorAll('.add').forEach(b=>b.onclick=()=>{const k=b.dataset.i;cart[k]=(cart[k]||0)+1;render();cn()});
+}
+function cn(){document.getElementById('cn').textContent=Object.values(cart).reduce((a,b)=>a+b,0)}
+const notes={g:'Вы смотрите как гость: цены и точные остатки видны после входа контрагента. Счёт по ИНН можно запросить без регистрации.',c:'Контрагент: базовые цены и остатки по складам из 1С, история заказов и документы в личном кабинете.',d:'Дилер: персональная скидка из договора в 1С (−12%), отсрочка платежа, выгрузка прайса в Excel.'};
+document.querySelectorAll('#role button').forEach(b=>b.onclick=()=>{role=b.dataset.r;document.querySelectorAll('#role button').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('note').textContent=notes[role];render()});
+document.getElementById('q').oninput=render;
+document.getElementById('go').onclick=()=>document.getElementById('cat').scrollIntoView({behavior:'smooth'});
+const dr=document.getElementById('dr'),sh=document.getElementById('sh');
+function open(){const ls=Object.entries(cart);document.getElementById('lines').innerHTML=ls.length?ls.map(([k,n])=>{const i=items[k];return `<div class="ln"><span>${T[i.t]} ${i.d}×${i.w}, ${ST[i.s]}</span><b class="mono">${n} шт</b></div>`}).join(''):'<p style="color:var(--mut)">Добавьте позиции из каталога или загрузите файл заявки.</p>';dr.classList.add('on');sh.classList.add('on')}
+function close(){dr.classList.remove('on');sh.classList.remove('on')}
+document.getElementById('cb').onclick=open;document.getElementById('x').onclick=close;sh.onclick=close;
+document.getElementById('inn').oninput=e=>{const v=e.target.value.replace(/\D/g,'');e.target.value=v;const dd=document.getElementById('dd');if(v.length===10||v.length===12){dd.innerHTML=`<b>ООО «Пример Снаб»</b> (подставлено по ИНН)<br>КПП 745101001 · ОГРН 1027400000000<br>454000, г. Челябинск, ул. Примерная, 1<br><small>В реальном сайте - запрос в DaData</small>`;dd.classList.add('on')}else dd.classList.remove('on')};
+document.getElementById('send').onclick=()=>{if(!document.getElementById('pd').checked){document.getElementById('pd').focus();return}document.getElementById('form').style.display='none';document.getElementById('ok').classList.add('on')};
+render();
+</script>
+</body>
+</html>
